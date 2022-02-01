@@ -80,6 +80,9 @@ let comprar = "";
 let angusShirt = 1500;
 let acdcShirt = 2000;
 let guitarShirt = 1000;
+let estampadoRemera = "";
+let cantidad = 0;
+let maxDeCompra = 5;
 
 // función
 function precioFinal (precio, cantidad){
@@ -101,10 +104,31 @@ class Shirt {
 let comprar = prompt("¿Quiere comprar una remera de la banda?")
 comprar.toLowerCase
 while (comprar==si) {
-    let shirt = new Shirt (prompt("Ingrese su talla"), prompt("Ingrese el color de remera elegido"), prompt("Ingrese el estampado elegido para su remera")); 
+    let shirt = new Shirt (prompt("Ingrese su talla"), prompt("Ingrese el color de remera elegido"), prompt("Quiere usted incluir un estampado en su remera").toLowerCase); 
+        if (this.estampado == si) {
+            alert("Tenemos estampados de Angus, de la Banda y de una guitarra.")
+            estampadoRemera=prompt("Ingrese angus, guitarra o banda según su elección");
+        }else {
+            alert("Usted no quiere estampado en su remera")
+        }
+
     carritoRemeras.push(shirt)
     comprar=prompt("¿Desearia realizar otra compra?")
 }
 for (const shirtProduct of carritoRemeras) {
-    alert("Los datos de su remera son los siguientes: talla " + shirtProduct.talla + ", color " + shirtProduct.color + " y con estampado de " + shirtProduct.estampado + ".")
+    alert("Los datos de su remera son los siguientes: talla " + shirtProduct.talla + ", color " + shirtProduct.color + " y con estampado de " + estampadoRemera + ".")
 }
+
+if (estampadoRemera=="angus") {
+    estampadoRemera=angusShirt;
+    alert("El precio de la remera en forma individual es de $"  + angusShirt)
+}else if (estampadoRemera=="banda"){
+    estampadoRemera=acdcShirt;
+    alert("El precio de la remera en forma individual es de $" + acdcShirt)
+
+}else {
+    estampadoRemera=guitarShirt;
+    alert("El precio de la remera en forma individual es de $" + guitarShirt)
+}
+cantidad = parseInt(prompt("Cuantas remeras desea llevarse"))
+alert("El precio final de su compra es de $" + precioFinal(estampadoRemera, cantidad))
