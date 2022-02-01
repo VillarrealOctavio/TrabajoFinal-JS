@@ -3,7 +3,7 @@ A SU VEZ, QUIERO QUE LOS MISMOS SALGAN DEL STOCK CUANDO EL CLIENTE LOS COMPRE. Q
  DE COMPRAS*/
 
 //  Variables
-let precioGuitar = 320000;
+/*let precioGuitar = 320000;
 
 // Clases para objetos
 
@@ -14,9 +14,9 @@ class Guitar {
         this.color = color;
         this.precio = parseInt(precio);
     }
-}
+}*/
 // Incorporo estructura de if
-alert("Contamos con las reconocidas guitarras de Angus Young: Gibson SG")
+/*alert("Contamos con las reconocidas guitarras de Angus Young: Gibson SG")
 let pregunta = prompt("¿Desea comprar una?")
 pregunta.toLowerCase
 if(pregunta=="si") {
@@ -27,12 +27,11 @@ alert(guitar1)
 }else {
     alert("El valor ingresado es incorrecto. Vuelva a ingresar.")
     pregunta=prompt("¿Desea comprar una?")
-}
+}*/
 
 
 //  Comienzo a incorporar los Arrays
-const guitarras = [];
-guitarras.push(guitar1);
+/*const guitarras = [];
 guitarras.push(new Guitar("Gibson", "SG", "marrón", "300000"));
 guitarras.push(new Guitar("Gibson", "SG", "blanca y negra", "150000"))
 guitarras.push(new Guitar("Gibson", "SG", "roja", "600000"));
@@ -41,11 +40,71 @@ for(const producto of guitarras) {
     alert("Guitarra "+ producto.marca + " " + producto.modelo + ", de color " + producto.color + ".");
 };
 
-// const productos = [{ id: 1, producto: "Arroz" },
-//                   { id: 2,  producto: "Fideo" },
-//                   { id: 3,  producto: "Pan" }];
+*/
 
-// for (const producto of productos) {
-//     alert(producto.id);
-//     alert(producto.producto);
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  Ahora realizaremos un carrito de remeras de la banda 
+// variables 
+
+let shirt = "";
+let comprar = "";
+let angusShirt = 1500;
+let acdcShirt = 2000;
+let guitarShirt = 1000;
+
+// función
+function precioFinal (precio, cantidad){
+    return (precio*1.21)*cantidad
+} 
+
+//arrays 
+
+let carritoRemeras = [];
+// clases 
+
+class Shirt {
+    constructor (talla, color, estampado) {
+        this.talla = talla;
+        this.color =  color;
+        this.estampado = estampado;
+    }
+}
+let comprar = prompt("¿Quiere comprar una remera de la banda?")
+comprar.toLowerCase
+while (comprar==si) {
+    let shirt = new Shirt (prompt("Ingrese su talla"), prompt("Ingrese el color de remera elegido"), prompt("Ingrese el estampado elegido para su remera")); 
+    carritoRemeras.push(shirt)
+    comprar=prompt("¿Desearia realizar otra compra?")
+}
+for (const shirtProduct of carritoRemeras) {
+    alert("Los datos de su remera son los siguientes: talla " + shirtProduct.talla + ", color " + shirtProduct.color + " y con estampado de " + shirtProduct.estampado + ".")
+}
