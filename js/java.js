@@ -1,134 +1,104 @@
 /*QUIERO REALIAR UNA SECCIÓN DONDE EL USUARIO PUEDA COMPRAR PRODUCTOS (EN ESTE CASO GUITARRA) Y, ADEMÁS, LOS MISMOS SE GUARDEN EN EL STOCK. 
 A SU VEZ, QUIERO QUE LOS MISMOS SALGAN DEL STOCK CUANDO EL CLIENTE LOS COMPRE. QUIERO TAMBIÉN GENERAR UN CARRITO
- DE COMPRAS*/
-
-//  Variables
-/*let precioGuitar = 320000;
-
-// Clases para objetos
-
+DE COMPRAS*/
+function precioFinal (parametro1, parametro2){
+    return alert((parametro1*1.21)*parametro2)
+}
+function despedida () {
+    alert("Gracias por su compra!")
+}
+alert("Bienvenido al área de compras de guitarras")
+let ingresar = prompt("¿Desea usted comprar una guitarra? Ingresar si o no")
+ingresar.toLowerCase
+while(ingresar==""){
+    alert("El valor ingresado es incorrecto")
+    ingresar=prompt("¿Desea usted comprar una guitarra? Ingresar si o no")
+}
+if(ingresar=="si") {
+    alert("Continúe")
+}else {
+    alert("Entonces puede mirar las mismas y buscar")
+}
 class Guitar {
-    constructor (marca, modelo, color, precio){
-        this.marca = marca;
-        this.modelo = modelo;
-        this.color = color;
-        this.precio = parseInt(precio);
-    }
-}*/
-// Incorporo estructura de if
-/*alert("Contamos con las reconocidas guitarras de Angus Young: Gibson SG")
-let pregunta = prompt("¿Desea comprar una?")
-pregunta.toLowerCase
-if(pregunta=="si") {
-    let guitar1 = new Guitar ("Gisbon", "SG", prompt("Ingrese el color deseado"), precioGuitar) 
-alert(guitar1)
-}else if(pregunta=="no"){
-    alert("¿Quiere volver a la página principal?")
-}else {
-    alert("El valor ingresado es incorrecto. Vuelva a ingresar.")
-    pregunta=prompt("¿Desea comprar una?")
-}*/
-
-
-//  Comienzo a incorporar los Arrays
-/*const guitarras = [];
-guitarras.push(new Guitar("Gibson", "SG", "marrón", "300000"));
-guitarras.push(new Guitar("Gibson", "SG", "blanca y negra", "150000"))
-guitarras.push(new Guitar("Gibson", "SG", "roja", "600000"));
-guitarras.push(new Guitar("Gibson", "SG", "negra", "130000"))
-for(const producto of guitarras) {
-    alert("Guitarra "+ producto.marca + " " + producto.modelo + ", de color " + producto.color + ".");
-};
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  Ahora realizaremos un carrito de remeras de la banda 
-// variables 
-
-let shirt = "";
-let comprar = "";
-let angusShirt = 1500;
-let acdcShirt = 2000;
-let guitarShirt = 1000;
-let estampadoRemera = "";
-let cantidad = 0;
-let maxDeCompra = 5;
-
-// función
-function precioFinal (precio, cantidad){
-    return (precio*1.21)*cantidad
-} 
-
-//arrays 
-
-let carritoRemeras = [];
-// clases 
-
-class Shirt {
-    constructor (talla, color, estampado) {
-        this.talla = talla;
-        this.color =  color;
-        this.estampado = estampado;
+    constructor(id, nombre, precio) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
     }
 }
-let comprar = prompt("¿Quiere comprar una remera de la banda?")
-comprar.toLowerCase
-while (comprar==si) {
-    let shirt = new Shirt (prompt("Ingrese su talla"), prompt("Ingrese el color de remera elegido"), prompt("Quiere usted incluir un estampado en su remera").toLowerCase); 
-        if (this.estampado == si) {
-            alert("Tenemos estampados de Angus, de la Banda y de una guitarra.")
-            estampadoRemera=prompt("Ingrese angus, guitarra o banda según su elección");
-        }else {
-            alert("Usted no quiere estampado en su remera")
-        }
+const guitarra = new Guitar (1, "Gibson SG", 250000)
+const guitarra1 = new Guitar (2, "Gisbon LesPaul", 300000)
+const guitarra2 = new Guitar (3, "Fender Stratocaster", 150000)
+const guitarra3 = new Guitar (4, "Fender Telecaster", 200000)
+const guitarra4 = new Guitar (5, "Gibson SG Standard", 400000)
+const guitarra5 = new Guitar (6, "Gisbon LesPaul 1956", 500000)
+const guitarra6 = new Guitar (7, "Fender Stratocaster 1960", 350000)
+const guitarra7 = new Guitar (8, "Fender Telecaster 2021", 230000)
 
-    carritoRemeras.push(shirt)
-    comprar=prompt("¿Desearia realizar otra compra?")
-}
-for (const shirtProduct of carritoRemeras) {
-    alert("Los datos de su remera son los siguientes: talla " + shirtProduct.talla + ", color " + shirtProduct.color + " y con estampado de " + estampadoRemera + ".")
-}
 
-if (estampadoRemera=="angus") {
-    estampadoRemera=angusShirt;
-    alert("El precio de la remera en forma individual es de $"  + angusShirt)
-}else if (estampadoRemera=="banda"){
-    estampadoRemera=acdcShirt;
-    alert("El precio de la remera en forma individual es de $" + acdcShirt)
+const carritoGuitarras = [];
 
-}else {
-    estampadoRemera=guitarShirt;
-    alert("El precio de la remera en forma individual es de $" + guitarShirt)
+const BBDD = [
+guitarra,
+guitarra1,
+guitarra2,
+guitarra3,
+guitarra4,
+guitarra5,
+guitarra6,
+guitarra7
+]
+alert("A continuación se le presentará la lista de nuestras guitarras con sus respectivos precios.")
+function mostrarProductos(){
+    BBDD.forEach(element => {
+        console.log(element)
+        alert("id " + element.id + "- nombre " + element.nombre + "- precio " + element.precio + ".")
+    });
 }
-cantidad = parseInt(prompt("Cuantas remeras desea llevarse"))
-alert("El precio final de su compra es de $" + precioFinal(estampadoRemera, cantidad))
+mostrarProductos ();
+
+
+let eleccionGuitarra = parseInt(prompt("Ingrese el id de la guitarra que desea comprar"))
+
+// --------------------------------------------------
+/*function ingresarCompra() {
+    BBDD.find((el)=>el.id==eleccionGuitarra)
+    carritoGuitarras.push(el)
+}*/
+// --------------------------------------------------
+
+
+
+const compraRealizada = BBDD.find((el) => el.id === eleccionGuitarra)
+carritoGuitarras.push(compraRealizada)
+
+for (const el of carritoGuitarras){
+    console.log(el);
+    alert("Usted ha comprado una guitarra " + el.nombre + ".");
+}
+despedida();
+
+
+
+
+// ---------------------------------------------------------------------------------------------------------------------------------------
+// Este código lo dejo comentado. (Funciona bien pero hay que eliminar parte del código de arriba para que se ejecute correctamente.)
+// function comprar (){
+//     for (const el of BBDD){
+//         carritoGuitarras.push(el);
+//         console.log(carritoGuitarras);
+//     }
+// }
+// comprar();
+// function ordenarPrecios(){
+//     BBDD.sort((a,b)=>{
+//         return a.precio - b.precio
+//     }) 
+// }
+// ordenarPrecios();
+// console.log(BBDD);
+// const masBarato = BBDD.filter((el)=>el.precio<320000);
+// console.log(masBarato);
+
+
+
