@@ -50,7 +50,7 @@ seleccionGuitar.addEventListener('change', ()=> {
 showProducts(Guitar);
 
 function showProducts(array) {
-    containerGuitar = "";
+    containerGuitar.innerHTML = "";
     array.forEach(el => {
         let div = document.createElement("div")
         div.className=`col-md-4`;
@@ -81,23 +81,14 @@ function showProducts(array) {
 // CÓDIGO DE BANDA
 
 
-
-const integrantesBanda = [
-    {nombre:"Angus Young", puesto: "Guitarra Principal",img:`/assets/img/angus.jfif`},
-    {nombre:"Malcom Young", puesto: "Guitarra Rítmica",img:`/assets/img/Malcom Young.jfif`},
-    {nombre:"Bryan Jonhson", puesto: "Voz",img:`/assets/img/bryan.jfif`},
-    {nombre:"Phil Rudd", puesto: "Bateria",img:`/assets/img/Phil Rudd.jfif`},
-    {nombre:"Cliff Williams", puesto: "Bajo",img:`/assets/img/Cliff Williams.jfif`}
-];
-
-
-
 let mostrarBanda = document.querySelector(".showBand");
-let banda = document.querySelector("#acdcBand");
+let contenedorBanda = document.querySelector("#contenedorBand");
 
-showBand.addEventListener("click", showAcdcBand(integrantesBanda))
+mostrarBanda.addEventListener("click", ()=>{
+    showAcdcBand(integrantesBanda)
+})
 
-showAcdcBand(integrantesBanda);
+// showAcdcBand(integrantesBanda);
 
 function showAcdcBand (array){
     for (const el of array) {
@@ -105,7 +96,8 @@ function showAcdcBand (array){
         div.className="col-md-12";
         div.innerHTML= 
         `<img src="${el.img}" alt="${el.nombre}">
-        <h4>${el.nombre}<span class="badge badge-secondary">${el.puesto}</span></h4>`
-        banda.appendChild(div);
+         <h4 class="letraColor">${el.nombre}<span class="badge badge-secondary">${el.puesto}</span></h4>
+         `
+        contenedorBanda.appendChild(div);
     }
 }
